@@ -1,34 +1,34 @@
 import React from 'react';
+import './App.css';  // Importing CSS styles for use in this component
 
 const HomePage = () => {
   return (
-    <div style={styles.container}>
-      <h1 style={styles.heading}>Welcome to PageNest!</h1>
-      <p style={styles.paragraph}>
-        PageNest is a book-tracking and review platform that helps you keep track of your reading, 
-        share reviews, and explore new books. Whether you're an avid reader or just starting your reading journey, 
-        PageNest offers you the tools to organize, discover, and enjoy books to the fullest.
-      </p>
+    <div className="homepage">
+      {/* Homepage Header Section */}
+      <header className="homepage-header">
+        <h1>Welcome to PageNest!</h1>
+        <p>
+          PageNest is a book-tracking and review platform that helps you keep track of your books, share reviews, and explore new books. Whether you're an avid reader or just starting out, PageNest offers you the tools to organize, discover, and enjoy books to the fullest.
+        </p>
+      </header>
+
+      {/* Features Section */}
+      <section className="features">
+        <h2>Features</h2>
+        <ul>
+          <li>Track the books you're currently reading and those you've completed.</li>
+          <li>Write and share reviews with a community of book lovers.</li>
+          <li>Discover new books recommended by others.</li>
+        </ul>
+      </section>
+
+      {/* Call to Action */}
+      <section className="cta-section text-center">
+        <p>Ready to start your book journey?</p>
+        <a href="#register" className="button">Join Now</a>
+      </section>
     </div>
   );
-};
-
-const styles = {
-  container: {
-    padding: '20px',
-    textAlign: 'center',
-    fontFamily: 'Arial, sans-serif',
-  },
-  heading: {
-    color: '#333',
-    fontSize: '2.5rem',
-  },
-  paragraph: {
-    color: '#555',
-    fontSize: '1.2rem',
-    maxWidth: '600px',
-    margin: '20px auto',
-  },
 };
 
 export default HomePage;
