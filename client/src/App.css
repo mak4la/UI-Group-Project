@@ -1,4 +1,4 @@
-/* Gen style */
+/* Gen s tyle */
 * {
   margin: 0;
   padding: 0;
@@ -7,159 +7,164 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa; /* Light grey background to create contrast */
+  background-color: #f9f9f9; 
   color: #333;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
+/* containers for the sections */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-/* Homepage Header Section */
+/* homepage header */
 .homepage-header {
-  background-color: #003366; /* Deep blue */
-  color: #ffffff; 
-  padding: 60px 20px;
+  background-color: #003366; 
+  color: #fff; 
   text-align: center;
-  border-radius: 8px;
+  padding: 80px 20px;
+  border-radius: 10px;
 }
 
-.homepage-header h1 {
-  font-size: 3rem;
-  font-weight: bold;
-}
-
-.homepage-header p {
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.features {
-  margin-top: 50px;
-  padding: 40px 20px;
-  text-align: left;
-}
-
-.features h2 {
+.homepage-title {
   font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-.features ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.features li {
-  font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 20px;
-  padding-left: 30px;
+}
+
+.homepage-subtitle {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+
+}
+/* Temporary Link Styling so can start working on it  */
+.temp-link {
+  margin-top: 20px;
+  text-align: center;
+  z-index: 3; 
   position: relative;
 }
 
-.features li::before {
-  content: "✓";
-  color: #007bff; /* Bright blue check */
-  position: absolute;
-  left: 0;
-  font-weight: bold;
-}
-
-.cta-section {
-  background-color: #003366; /* Same deep blue as header for consistency smirk */
-  color: #ffffff;
-  padding: 50px 20px;
-  text-align: center;
-  margin-top: 50px;
-  border-radius: 8px;
-}
-
-.cta-section p {
-  font-size: 1.5rem;
-  margin-bottom: 30px;
-}
-
-.button {
-  display: inline-block;
-  background-color: #ff9900; /* Bright orange button */
-  color: #ffffff;
-  padding: 15px 30px;
-  text-align: center;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.button:hover {
-  background-color: #e68a00; /* Darken on hover */
-  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
-  transform: translateY(-3px);
-}
-
-.form-section {
-  max-width: 400px;
-  margin: 50px auto;
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-form input {
-  width: calc(100% - 20px);
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-form button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-form button:hover {
-  background-color: #0056b3;
-}
-
-.nav-links {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.nav-links a {
-  color: #007bff;
-  margin: 0 15px;
-  text-decoration: none;
+.temp-hyperlink {
+  color: #0c3e73; 
+  text-decoration: underline;
+  font-size: 1.1rem;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.nav-links a:hover {
-  color: #0056b3;
+.temp-hyperlink:hover {
+  color: #03111f; 
 }
+
+
+/* Features Section */
+.features {
+  position: relative; 
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: 40px auto; 
+  max-width: 1000px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  /* The Background Image */
+  background-image: url('bookbackground.jpeg');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+
+  z-index: 1;
+}
+
+.features::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.85); 
+  z-index: 2; 
+}
+.features h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333; 
+  z-index: 3;  /* Ensure it's above the overlay !!!!!! important */
+  position: relative; 
+}
+
+.features-cards {
+  position: relative;
+  z-index: 3; 
+  display: flex;
+  justify-content: center; /* Center all cards evenly */
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px; 
+  margin: 0 auto; 
+}
+
+/* Individual Feature Card */
+.feature-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(30% - 20px);
+  min-width: 250px;
+  max-width: 300px; 
+  text-align: left;
+}
+
+
+.feature-card h3 {
+  color: #003366;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cta-section {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 40px 20px;
+}
+
+.cta-section p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.button {
+  background-color: #ff9900; 
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: #e68a00;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
 
 .text-center {
   text-align: center;
@@ -168,4 +173,3 @@ form button:hover {
 .margin-top {
   margin-top: 20px;
 }
-
