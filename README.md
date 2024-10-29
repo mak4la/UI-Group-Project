@@ -20,7 +20,7 @@ PageNest serves as a ..... This server is built using Node.js and Express, with 
 1. **Clone the Repository**
    - Open your terminal and clone the repository to your local machine:
      ```bash
-     git clone <repository-url>
+     git clone <https://github.com/mak4la/UI-Group-Project.git>
      cd PageNest
      ```
 
