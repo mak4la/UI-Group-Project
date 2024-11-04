@@ -33,7 +33,7 @@ const HomePage = () => {
         
         {/* Temporary Link for Reviews and Rating System !!! */}
         <div className="temp-link">
-          <a href="#/reviews" className="temp-hyperlink">
+          <a href="/books/1/reviews" className="temp-hyperlink">
             Click here to start working on Reviews and Rating System
           </a>
         </div>
@@ -49,5 +49,6 @@ const HomePage = () => {
     </div>
   );
 };
+
 
 export default HomePage;
