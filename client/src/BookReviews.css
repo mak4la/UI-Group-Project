@@ -6,6 +6,12 @@
   font-weight: 300;
   font-style: normal;
 }
+body {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 
 .review-section {
    
@@ -15,10 +21,6 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
   }
   
   .book-title {
@@ -57,9 +59,7 @@
     border: 1px solid #ccc;
     margin-bottom: 20px;
     resize: vertical;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+
   }
   .button-container {
     display: flex;
@@ -76,9 +76,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+
   }
   
   .back-button:hover {
@@ -93,9 +91,7 @@
     color: white;
     border: none;
     border-radius: 5px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+
   }
   
   .submit-button:hover {
@@ -114,9 +110,6 @@
     padding: 10px;
     color: #fff;
     margin-bottom: 10px; /* Space between reviews */
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
   }
   
   .username-input {
@@ -127,9 +120,7 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+
   }
   
   .review-buttons {
@@ -162,18 +153,14 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+    
   }
   
   .homepage-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+  
   
   }
 
@@ -181,8 +168,6 @@
     font-size: 0.85rem; /* Smaller font size */
     color: #fff; 
     margin-top: 5px; /* Space above the timestamp */
-    font-family: "Merriweather", serif;
-    font-weight: 300;
-    font-style: normal;
+
   }
   
