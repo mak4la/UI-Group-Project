@@ -46,7 +46,7 @@ const BookReviews = () => {
   };
 
   const handleBackButtonClick = () => {
-    navigate('/'); // Navigate back to the home page
+    navigate('/'); // Navigate back to the review- page
   };
 
   // Function to render stars based on the rating
@@ -77,9 +77,9 @@ const BookReviews = () => {
   return (
     <>
       {/* Header Section */}
-      <header className="homepage-header">
-        <h1 className="homepage-title">PageNest</h1>
-        <p className="homepage-subtitle">
+      <header className="review-page-header">
+        <h1 className="review-page-title">PageNest</h1>
+        <p className="review-page-subtitle">
           Share and read reviews 
         </p>
       </header>
@@ -114,7 +114,7 @@ const BookReviews = () => {
         />
         <div className="button-container">
           <button className="back-button" onClick={handleBackButtonClick}>
-            Back to Home
+            Back to review-
           </button>
           <button className="submit-button" onClick={handleRatingSubmit}>
             Submit Review

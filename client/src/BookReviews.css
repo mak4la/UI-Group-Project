@@ -136,8 +136,8 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
     background-color: #bdd07b;
   }
   
-/* homepage header */
-.homepage-header {
+/* reviewpage header */
+.review-page-header {
     text-align: center;
     background-color: #50785C; 
     color: white;
@@ -145,14 +145,14 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
     width: 100%; /* Full width */
   }
   
-  .homepage-title {
+  .review-page-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
     
   }
   
-  .homepage-subtitle {
+  .review-page-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
