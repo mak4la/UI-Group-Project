@@ -114,7 +114,7 @@ const BookReviews = () => {
         />
         <div className="button-container">
           <button className="back-button" onClick={handleBackButtonClick}>
-            Back to review-
+            Back to home
           </button>
           <button className="submit-button" onClick={handleRatingSubmit}>
             Submit Review
