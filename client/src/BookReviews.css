@@ -1,16 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+.merriweather-light {
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
 .review-section {
    
     width: 100%;
     text-align: center;
-    background-color: #ffffff;
+    background-color: #E5FC94;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .book-title {
     font-size: 2rem;
-    color: #003366;
+    color: #50785C;
     margin-bottom: 20px;
   }
   
@@ -30,7 +43,9 @@
   }
   
   .star.filled {
-    color: #065099;
+    color: #6bebed;
+    ;
+;
   }
   
   .review-text {
@@ -42,6 +57,9 @@
     border: 1px solid #ccc;
     margin-bottom: 20px;
     resize: vertical;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   .button-container {
     display: flex;
@@ -54,51 +72,64 @@
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #003366;
+    background-color: #50785C;;
     color: white;
     border: none;
     border-radius: 5px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .back-button:hover {
-    background-color: #031c34;
+    background-color: #42644c;
   }
   
   .submit-button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #28a745;
+    background-color: #50785C;
     color: white;
     border: none;
     border-radius: 5px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .submit-button:hover {
-    background-color: #218838;
+    background-color: #42644c;
   }
   
   .reviews-container {
     margin-top: 20px;
     padding: 10px;
-    border-top: 1px solid #ccc; /* Add a top border for separation */
   }
   
   .review {
-    background-color: #f9f9f9; /* Light background for each review */
-    border: 1px solid #ddd;
+    background-color: #50785C; /* Light background for each review */
+    border: 1px solid #42644c;
     border-radius: 5px;
     padding: 10px;
+    color: #fff;
     margin-bottom: 10px; /* Space between reviews */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .username-input {
     width: 100%;
     padding: 10px;
+    color: #2b2a2a;
     font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     margin-bottom: 20px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .review-buttons {
@@ -108,19 +139,20 @@
   .review-buttons button {
     padding: 5px 10px;
     margin-right: 5px;
+    background-color: #E5FC94;
     cursor: pointer;
     border: none;
     border-radius: 5px;
   }
   
   .review-buttons button:hover {
-    background-color: #f0f0f0; /* Light background on hover */
+    background-color: #bdd07b;
   }
   
 /* homepage header */
 .homepage-header {
     text-align: center;
-    background-color: #003366; /* Adjust the background color */
+    background-color: #50785C; 
     color: white;
     padding: 20px; /* Space around the header */
     width: 100%; /* Full width */
@@ -130,18 +162,27 @@
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 20px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
   .homepage-subtitle {
     font-size: 1.2rem;
     max-width: 700px;
     margin: 0 auto;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   
   }
 
   .review-timestamp {
     font-size: 0.85rem; /* Smaller font size */
-    color: #666; /* Grey color for the timestamp */
+    color: #fff; 
     margin-top: 5px; /* Space above the timestamp */
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
   }
   
