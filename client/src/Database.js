@@ -9,24 +9,24 @@ const pool = mysql.createPool({
   database: process.env.DATABASE
 }).promise()
 
-async function getUsers(){
+export async function getUsers(){
   const [rows] = await pool.query("SELECT * FROM users") 
   return rows
 }
 
-async function getUser(email) {
+export async function getUser(email) {
   const [rows] = await pool.query('SELECT * FROM users WHERE email = ?', [email])
   return rows
 }
 
-async function createUser(username, password_hash, email, user_first_name, user_last_name) {
+export async function createUser(username, password_hash, email, user_first_name, user_last_name) {
   const result = await pool.query(
     'INSERT INTO users (username, password_hash, email, user_first_name, user_last_name) VALUES (?, ?, ?, ?, ?)',
     [username, password_hash, email, user_first_name, user_last_name])
     return result
 }
 
-async function getReviewsForBook(google_book_id) {
+export async function getReviewsForBook(google_book_id) {
   const [rows] = await pool.query(
     'SELECT * FROM reviews WHERE google_book_id = ?',
     [google_book_id]
@@ -34,7 +34,7 @@ async function getReviewsForBook(google_book_id) {
   return rows
 }
 
-async function createReview(google_book_id, user_id, rating, review_text) {
+export async function createReview(google_book_id, user_id, rating, review_text) {
   const result = await pool.query(
     'INSERT INTO reviews (google_book_id, user_id, rating, review_text) VALUES (?, ?, ?, ?)',
     [google_book_id, user_id, rating, review_text]
@@ -42,7 +42,7 @@ async function createReview(google_book_id, user_id, rating, review_text) {
   return result
 }
 
-async function getUserLists(user_id) {
+export async function getUserLists(user_id) {
   const [rows] = await pool.query(
     'SELECT * FROM lists WHERE user_id = ?',
     [user_id]
@@ -50,7 +50,7 @@ async function getUserLists(user_id) {
   return rows
 }
 
-async function createList(user_id, list_name) {
+export async function createList(user_id, list_name) {
   const result = await pool.query(
     'INSERT INTO lists (user_id, list_name) VALUES (?, ?)',
     [user_id, list_name]
@@ -58,7 +58,7 @@ async function createList(user_id, list_name) {
   return result
 }
 
-async function getListBooks(list_id) {
+export async function getListBooks(list_id) {
   const [rows] = await pool.query(
     'SELECT * FROM books_in_lists WHERE list_id = ?',
     [list_id]
@@ -66,7 +66,7 @@ async function getListBooks(list_id) {
   return rows  
 }
 
-async function addBookToList(list_id, google_book_id) {
+export async function addBookToList(list_id, google_book_id) {
   const result = await pool.query(
     'INSERT INTO books_in_lists (list_id, google_book_id) VALUES (?, ?)',
     [list_id, google_book_id]
@@ -74,7 +74,7 @@ async function addBookToList(list_id, google_book_id) {
   return result
 }
 
-async function getNotesForBook(google_book_id, user_id) {
+export async function getNotesForBook(google_book_id, user_id) {
   const [rows] = await pool.query(
     'SELECT * FROM notes WHERE google_book_id = ? AND user_id = ?',
     [google_book_id, user_id]  
@@ -82,7 +82,7 @@ async function getNotesForBook(google_book_id, user_id) {
   return rows
 }
 
-async function createNote(google_book_id, user_id, note_text) {
+export async function createNote(google_book_id, user_id, note_text) {
   const result = await pool.query(
     'INSERT INTO notes (google_book_id, user_id, note_text) VALUES (?, ?, ?)',
     [google_book_id, user_id, note_text]
