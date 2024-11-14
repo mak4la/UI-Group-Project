@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9; 
+    color: #333;
+    line-height: 1.6;
+}
+
+
+
+
+.lists-header {
+    background-color: #003366; 
+    color: #fff; 
+    text-align: center;
+    padding: 80px 20px;
+    border-radius: 10px;
+  }
+  
+.lists-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}

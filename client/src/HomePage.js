@@ -18,7 +18,11 @@ const HomePage = () => {
         <h2>Our Features</h2>
         <div className="features-cards">
           <div className="feature-card">
-            <h3>Track Your Books</h3>
+            <h3>
+              <a href="/lists" className="temp-hyperlink">
+                Track Your Books
+              </a>
+            </h3>
             <p>Easily keep track of the books you're currently reading or plan to read.</p>
           </div>
           <div className="feature-card">
