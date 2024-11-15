@@ -1,0 +1,22 @@
+.header{
+    padding: 25px;
+    background-color: #50785C;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.profile{
+    float: right;
+    margin-right: 40px;
+    background: none; 
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    /* margin-top: 5px; */
+
+    /* margin-top: 10px; */
+}

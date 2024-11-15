@@ -1,53 +1,74 @@
-import React from 'react';
-import './App.css'; 
+import './HomePage.css';
+import { data } from './data';
+import React, { useEffect } from 'react';
 
 const HomePage = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.data');
+      elements.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
+          document.body.style.backgroundColor = el.dataset.bgcolor;
+          document.body.style.color = el.dataset.txtcolor;
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial call to set the background color based on the initial position
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="homepage">
-      
-      {/* Header Section */}
-      <header className="homepage-header">
-        <h1 className="homepage-title">Welcome to PageNest</h1>
-        <p className="homepage-subtitle">
-          Organize your book collection, share reviews, and discover new books effortlessly.
-        </p>
-      </header>
-
-      {/* Features Section */}
-      <section className="features container">
-        <h2>Our Features</h2>
-        <div className="features-cards">
-          <div className="feature-card">
-            <h3>Track Your Books</h3>
-            <p>Easily keep track of the books you're currently reading or plan to read.</p>
-          </div>
-          <div className="feature-card">
-            <h3>Write Reviews</h3>
-            <p>Share your thoughts and help others discover the best books out there.</p>
-          </div>
-          <div className="feature-card">
-            <h3>Discover New Books</h3>
-            <p>Explore new books recommended by our community of book lovers.</p>
-          </div>
+      <div className='top'>
+        <div className='banner'>
+          <h1>Welcome to the best app for bookworms</h1>
+          <h2>Organize your book collections, share reviews, and discover new books</h2>
+          <h3>Sign up to join our community!</h3>
+          <button>Sign Up</button>
         </div>
-        
-        {/* Temporary Link for Reviews and Rating System !!! */}
-        <div className="temp-link">
-          <a href="#/reviews" className="temp-hyperlink">
-            Click here to start working on Reviews and Rating System
-          </a>
-        </div>
-      </section>
-
-      {/* Cta*/}
-      <section className="cta-section">
-        <p>Join PageNest today and start tracking your book journey!</p>
-        <a href="#register" className="button">Join Now</a>
-      </section>
+      </div>
       
-      
+      <div> 
+        {data.map((group, i) => (
+          <div
+            key={i}
+            className={`data ${i === 0 ? 'data-small' : ''}`}
+            data-bgcolor={group.theme.backgroundColor}
+            data-txtcolor={group.theme.color}
+            data-button={group.button}
+          >
+           {i % 2 === 0 ? (
+              <>
+                {group.image && <img src={group.image} alt={group.title} className='data-image' />}
+                <div className='text-content'>
+                  {group.title && <h1>{group.title}</h1>}
+                  {group.paragraph && <h2>{group.paragraph}</h2>}
+                  {group.button && <button>{group.button}</button>}
+                </div>
+              </>
+            ) : (
+              <>
+                <div className='text-content'>
+                  {group.title && <h1>{group.title}</h1>}
+                  {group.paragraph && <h2>{group.paragraph}</h2>}
+                  {group.button && <button>{group.button}</button>}
+                </div>
+                {group.image && <img src={group.image} alt={group.title} className='data-image' />}
+              </>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
-};
+}
 
 export default HomePage;
+
+

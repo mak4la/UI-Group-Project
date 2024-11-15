@@ -1,0 +1,24 @@
+/* .footer{
+    padding: 65px;
+    background-color: #50785C;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer h1{
+    margin: 0;
+} */
+.footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    /* height: 100px; */
+    background-color: #50785C;
+    color: white;
+    padding: 65px;
+}
+
+.footer h1 {
+    margin: 0;
+}
