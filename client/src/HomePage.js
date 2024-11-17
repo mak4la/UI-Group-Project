@@ -35,7 +35,7 @@ const HomePage = () => {
               <h2>Organize your book collections, share reviews, and discover new books</h2>
               <h3>Sign up to join our community!</h3>
               <button>
-                <a href="/books/1/reviews" className="temp-hyperlink"> Sign Up </a>
+                <a href="/register" className="temp-hyperlink"> Sign Up </a>
               </button>
             </div>
           </div>
