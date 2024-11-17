@@ -1,8 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './HomePage';
-import Header from './components/Header';
-import Footer from './components/Footer';
 import BookReviews from './BookReviews'; 
 import Lists from './Lists';
 import ListedBooks from './ListedBooks';
@@ -13,9 +11,6 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <Header />
-      <HomePage />
-      <Footer />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/books/:bookId/reviews" element={<BookReviews />} /> {/* Route for Book Reviews with dynamic bookId */}

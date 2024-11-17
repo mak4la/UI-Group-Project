@@ -1,6 +1,8 @@
 import './HomePage.css';
 import { data } from './data';
 import React, { useEffect } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const HomePage = () => {
   useEffect(() => {
@@ -24,48 +26,54 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="homepage">
-      <div className='top'>
-        <div className='banner'>
-          <h1>Welcome to the best app for bookworms</h1>
-          <h2>Organize your book collections, share reviews, and discover new books</h2>
-          <h3>Sign up to join our community!</h3>
-          <button>Sign Up</button>
-        </div>
-      </div>
-      
-      <div> 
-        {data.map((group, i) => (
-          <div
-            key={i}
-            className={`data ${i === 0 ? 'data-small' : ''}`}
-            data-bgcolor={group.theme.backgroundColor}
-            data-txtcolor={group.theme.color}
-            data-button={group.button}
-          >
-           {i % 2 === 0 ? (
-              <>
-                {group.image && <img src={group.image} alt={group.title} className='data-image' />}
-                <div className='text-content'>
-                  {group.title && <h1>{group.title}</h1>}
-                  {group.paragraph && <h2>{group.paragraph}</h2>}
-                  {group.button && <button>{group.button}</button>}
-                </div>
-              </>
-            ) : (
-              <>
-                <div className='text-content'>
-                  {group.title && <h1>{group.title}</h1>}
-                  {group.paragraph && <h2>{group.paragraph}</h2>}
-                  {group.button && <button>{group.button}</button>}
-                </div>
-                {group.image && <img src={group.image} alt={group.title} className='data-image' />}
-              </>
-            )}
+    <>
+      <Header />
+        <div className="homepage">
+          <div className='top'>
+            <div className='banner'>
+              <h1>Welcome to the best app for bookworms</h1>
+              <h2>Organize your book collections, share reviews, and discover new books</h2>
+              <h3>Sign up to join our community!</h3>
+              <button>
+                <a href="/books/1/reviews" className="temp-hyperlink"> Sign Up </a>
+              </button>
+            </div>
           </div>
-        ))}
-      </div>
-    </div>
+          
+          <div> 
+            {data.map((group, i) => (
+              <div
+                key={i}
+                className={`data ${i === 0 ? 'data-small' : ''}`}
+                data-bgcolor={group.theme.backgroundColor}
+                data-txtcolor={group.theme.color}
+                data-button={group.button}
+              >
+              {i % 2 === 0 ? (
+                  <>
+                    {group.image && <img src={group.image} alt={group.title} className='data-image' />}
+                    <div className='text-content'>
+                      {group.title && <h1>{group.title}</h1>}
+                      {group.paragraph && <h2>{group.paragraph}</h2>}
+                      {group.button && <button>{group.button}</button>}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className='text-content'>
+                      {group.title && <h1>{group.title}</h1>}
+                      {group.paragraph && <h2>{group.paragraph}</h2>}
+                      {group.button && <button>{group.button}</button>}
+                    </div>
+                    {group.image && <img src={group.image} alt={group.title} className='data-image' />}
+                  </>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      <Footer />
+    </>
   );
 }
 
