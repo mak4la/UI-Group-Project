@@ -5,7 +5,8 @@ import BookReviews from './BookReviews';
 import Lists from './Lists';
 import ListedBooks from './ListedBooks';
 import Book from './Book';
-
+import Register from './Register';
+import Login from './Login';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/lists" element={<Lists />} /> {/* Route for User's Lists*/}
         <Route path="/lists/:listId" element={<ListedBooks />} /> {/* Route for one of a User's Lists*/}
         <Route path="/lists/:listId/:bookid" element={<Book />} /> {/* Temporary route to show book info in list*/}
+        <Route path="/register" element={<Register />} /> {/* Route for User Registration*/}
+        <Route path="/login" element={<Login />} /> {/* Route for User Login*/}
       </Routes>
     </div>
   </Router>
