@@ -1,0 +1,37 @@
+
+.book-page {
+    min-height: 100vh;    
+    display: flex;
+    flex-direction: column;   
+}
+
+.book {
+    height: 600px;
+    width: 1000px;
+    border-radius: 20px;
+    list-style-type: none;
+    padding: 20px;
+    margin: 80px;
+    background: silver;
+    margin-left: calc(calc(100% - 1000px)/2);
+    text-align: center;
+}
+
+.book p{
+    margin: 20px
+}
+
+.button-group {
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+}
+
+.book-header, .book-footer{
+    height: 120px;
+    width: 100%;
+    background-color: #50785C;
+    text-align: center;
+    align-content: center;
+    flex:1
+}
