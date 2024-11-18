@@ -23,8 +23,10 @@ const Book = () => {
                     This is a sample description. 
                 </p>
                 <div className="button-group"> 
+                    Work in Progress: 
                     <button> Add to List </button>     
                     <button> See Reviews </button>
+                    <button> Notes </button>
                 </div>
 
             </div>
