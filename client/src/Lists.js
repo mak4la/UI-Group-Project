@@ -31,9 +31,8 @@ const Lists = () =>{
     }
     return(
       <div className='lists-page'>
-        <header className="lists-header">
-          <h1>Your Lists</h1>
-        </header>
+    
+        <h1>Your Lists</h1>
 
         <form onSubmit={handleSubmit}>
           <input type='text' placeholder="Enter a list name" value={text} onChange={e => setText(e.target.value)}></input>
@@ -46,9 +45,9 @@ const Lists = () =>{
           </div>
         ))}
 
-        <footer className="lists-footer">
+        {/* <footer className="lists-footer">
           <h1>PageNest</h1>
-        </footer>
+        </footer> */}
       </div>
   );
 }

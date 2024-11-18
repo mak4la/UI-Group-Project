@@ -27,7 +27,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
         <div className="homepage">
           <div className='top'>
             <div className='banner'>
@@ -35,7 +35,7 @@ const HomePage = () => {
               <h2>Organize your book collections, share reviews, and discover new books</h2>
               <h3>Sign up to join our community!</h3>
               <button>
-                <a href="/register" className="temp-hyperlink"> Sign Up </a>
+                <a href="/register" className='buttonHome'> Sign Up </a>
               </button>
             </div>
           </div>
@@ -72,7 +72,7 @@ const HomePage = () => {
             ))}
           </div>
         </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

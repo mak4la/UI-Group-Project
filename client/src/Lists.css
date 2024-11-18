@@ -24,7 +24,7 @@
 }
 
 .lists-header, .lists-footer{
-    /*height: 120px;*/
+    height: 10px;
     width: 100%;
     background-color: #50785C;
     text-align: center;

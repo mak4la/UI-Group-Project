@@ -78,7 +78,7 @@ const BookReviews = () => {
     <>
       {/* Header Section */}
       <header className="review-page-header">
-        <h1 className="review-page-title">PageNest</h1>
+        {/* <h1 className="review-page-title">PageNest</h1> */}
         <p className="review-page-subtitle">
           Share and read reviews 
         </p>

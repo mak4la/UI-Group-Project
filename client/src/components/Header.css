@@ -20,3 +20,13 @@
 
     /* margin-top: 10px; */
 }
+.navLinks{
+    display: flex;
+    gap: 15px;
+}
+.navLinks a {
+    text-decoration: none; /* Remove underline */
+    color: white; 
+    font-size: 20px;
+    font-weight: bold;
+}

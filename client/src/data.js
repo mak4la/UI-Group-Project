@@ -4,7 +4,7 @@ import discoverImage from './assets/discover.png';
 
 export const data = [
     {
-        theme: {backgroundColor: "#50785C", color: "black"},
+        theme: {backgroundColor: "#d8f7e1", color: "black"},
     },
     {
         title: "Discover",
