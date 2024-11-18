@@ -4,9 +4,9 @@ import './Book.css';
 const Book = () => {
     return(
         <div className='book-page'>
-            <header className="book-header">
+            {/*<header className="book-header">
                 <h1>PageNest</h1>
-            </header>
+            </header> */}
 
             <div className='book'>
                 <h1>The Great Gatsby</h1>
@@ -31,8 +31,8 @@ const Book = () => {
             
             
 
-            <footer className="book-footer">
-            </footer>
+            {/*<footer className="book-footer">
+            </footer> */} 
         </div>
     );
 }

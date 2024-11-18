@@ -60,7 +60,7 @@ const ListedBooks = () =>{
         <div className='list-page'>
             <header className="list-header">
                 <h1>Reading</h1>
-            </header>
+            </header> 
 
             <button className="add-button">Add Book</button>
 
@@ -72,9 +72,9 @@ const ListedBooks = () =>{
                 ))}
             </div>
 
-            <footer className="list-footer">
+            {/*<footer className="list-footer">
                 <h1>PageNest</h1>
-            </footer>
+            </footer> */}
         </div>
     )
 
