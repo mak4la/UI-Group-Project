@@ -101,8 +101,8 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   }
   
   .review {
-    background-color: #50785C; /* Light background for each review */
-    border: 1px solid #42644c;
+    background-color: #c77391; /* Light background for each review */
+    border: 1px solid #9f244f;
     border-radius: 5px;
     padding: 10px;
     color: #fff;
