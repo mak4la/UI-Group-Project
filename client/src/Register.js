@@ -118,7 +118,7 @@ function Register() {
         <button type="submit" className="register-button">Register</button>
       </form>
       <p className="login-link">
-        Already have an account? <span style={{ color: 'blue', cursor: 'pointer' }}>Log in</span>
+        Already have an account? <span style={{ color: '#574C3F', cursor: 'pointer' }}>Log in</span>
       </p>
     </div>
   );

@@ -1,5 +1,7 @@
 import ListedBook from './ListedBook';
 import './ListedBooks.css';
+import {Link} from "react-router-dom";
+
 
 const ListedBooks = () =>{
     const sample_books = [
@@ -57,25 +59,20 @@ const ListedBooks = () =>{
 
 
     return(
-        <div className='list-page'>
-            <header className="list-header">
-                <h1>Reading</h1>
-            </header> 
-
-            <button className="add-button">Add Book</button>
-
-            <div className='bookbox'>
-                {sample_books.map( list => (
-                    <div className='book-tile'>
-                        <ListedBook key={list.id} id={list.id} name={list.name} image={list.image}/> 
-                    </div>
-                ))}
+      <div className='list-page'>
+        <Link to="/lists">
+          <button className="back-button">Back</button>
+        </Link>
+        <h1 className="list-header">Reading</h1>
+        <button className="add-button">Add Book</button>
+        <div className='bookbox'>
+          {sample_books.map( list => (
+            <div className='book-tile'>
+              <ListedBook key={list.id} id={list.id} name={list.name} image={list.image}/> 
             </div>
-
-            {/*<footer className="list-footer">
-                <h1>PageNest</h1>
-            </footer> */}
+          ))}
         </div>
+      </div>
     )
 
 }

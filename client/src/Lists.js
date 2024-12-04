@@ -36,7 +36,7 @@ const Lists = () =>{
 
         <form onSubmit={handleSubmit}>
           <input type='text' placeholder="Enter a list name" value={text} onChange={e => setText(e.target.value)}></input>
-          <button type='submit'>Add List</button>
+          <button className = 'addList' type='submit'>Add List</button>
         </form>
 
         {lists.map( list => (
@@ -44,10 +44,6 @@ const Lists = () =>{
             <List key={list.id} id={list.id} name={list.name}/> 
           </div>
         ))}
-
-        {/* <footer className="lists-footer">
-          <h1>PageNest</h1>
-        </footer> */}
       </div>
   );
 }

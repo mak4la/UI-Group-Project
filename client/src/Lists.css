@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 .lists-page {
     min-height: 100vh;   
@@ -7,20 +8,27 @@
     align-items: center;
 }
 
-.lists-box{
+.lists-page h1{
+    text-align: center;
+    color: #574C3F;
+    padding: 20px;
+    width: auto;
+    font-family: "Merriweather", serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: -15px;
 }
 
 .list-box{
     height: 150px;
-    width: 50%;
-    padding: 20px;
+    width: 40%;
     margin: 20px;
-    margin-left: -5px; 
-    border: 5px solid black;
-    border-radius: 100px;
-    background-color: silver;
-    text-align: center;
-    align-content: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #ECE4DA;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #574C3F;
+    
 }
 
 .lists-header, .lists-footer{
@@ -33,8 +41,8 @@
 }
 
 .temp-hyperlink {
-    color: #0c3e73; 
-    text-decoration: underline;
+    color: #574C3F; 
+    text-decoration: none;
     font-size: 1.1rem;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -44,5 +52,27 @@
     color: #03111f; 
 }
 
+.addList {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #574C3F;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 25px;
 
+}
+
+.deleteList {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #574C3F
+    ;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 25px;
+}
 

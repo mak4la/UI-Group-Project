@@ -52,11 +52,11 @@ function Login() {
       </form>
 
       <div className="forgot-password-link">
-        <span style={{ color: 'blue', cursor: 'pointer' }}>Forgot password?</span>
+        <span style={{ color: '#574C3F', cursor: 'pointer' }}>Forgot password?</span>
       </div>
 
       <p className="alternate-link">
-        Don't have an account? <span style={{ color: 'blue', cursor: 'pointer' }}>Register</span>
+        Don't have an account? <span style={{ color: '#574C3F', cursor: 'pointer' }}>Register</span>
       </p>
     </div>
   );

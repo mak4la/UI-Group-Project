@@ -184,7 +184,7 @@
     max-width: 400px;
     margin: 2rem auto;
     padding: 1.5rem;
-    background-color: #B3ECC4;
+    background-color: #ECE4DA;
     border-radius: 8px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   }
@@ -218,7 +218,7 @@
   /* Adjust specific styling if needed */
 .register-title {
     font-size: 2rem;
-    color: #000000;
+    color: #574C3F;
     font-weight: 700; 
   }
   
@@ -254,7 +254,7 @@
     padding: 0.75rem;
     font-size: 1rem;
     color: #fff;
-    background-color: #9093e9;
+    background-color: #574C3F;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -262,7 +262,8 @@
   }
   
   .register-button:hover {
-    background-color: #825df1;
+    background-color: #B9A590
+    ;
   }
   
   .login-link {
@@ -302,9 +303,10 @@
   font-family: 'Source Serif 4', serif;
   position: relative;
   max-width: 400px;
+  height: 508px;
   margin: 2rem auto;
   padding: 1.5rem;
-  background-color: #B3ECC4;
+  background-color: #ECE4DA;
   border-radius: 8px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -333,7 +335,7 @@
 
 .login-register-title {
   font-size: 2rem;
-  color: #333;
+  color: #574C3F;
 }
 
 .login-register-subtitle {
@@ -366,7 +368,7 @@
   padding: 0.75rem;
   font-size: 1rem;
   color: #fff;
-  background-color: #9093e9;
+  background-color: #574C3F;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -374,7 +376,7 @@
 }
 
 .login-register-button:hover {
-  background-color: #825df1;
+  background-color: #B9A590;
 }
 
 .alternate-link {

@@ -12,17 +12,17 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
 .review-section {
    
     width: 100%;
-    height: 500px;
+    height: 600px;
     text-align: center;
-    background-color: #E5FC94;
+    background-color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
   }
   
   .book-title {
     font-size: 2rem;
-    color: #50785C;
+    color: #574C3F;
     margin-bottom: 20px;
   }
   
@@ -42,13 +42,13 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   }
   
   .star.filled {
-    color: #6bebed;
+    color: #574C3F;
     ;
 ;
   }
   
   .review-text {
-    width: 100%;
+    width: 900px;
     height: 100px;
     padding: 10px;
     font-size: 1rem;
@@ -69,22 +69,22 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #50785C;;
+    background-color: #B9A590;
     color: white;
     border: none;
     border-radius: 5px;
-
+  
   }
   
   .back-button:hover {
-    background-color: #42644c;
+    background-color: #574C3F;
   }
   
   .submit-button {
     padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
-    background-color: #50785C;
+    background-color: #B9A590;
     color: white;
     border: none;
     border-radius: 5px;
@@ -92,7 +92,7 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   }
   
   .submit-button:hover {
-    background-color: #42644c;
+    background-color: #574C3F;
   }
   
   .reviews-container {
@@ -101,8 +101,8 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   }
   
   .review {
-    background-color: #c77391; /* Light background for each review */
-    border: 1px solid #9f244f;
+    background-color: #B9A590; /* Light background for each review */
+    border: 1px solid #574C3F;
     border-radius: 5px;
     padding: 10px;
     color: #fff;
@@ -110,7 +110,7 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   }
   
   .username-input {
-    width: 100%;
+    width: 900px;
     padding: 10px;
     color: #2b2a2a;
     font-size: 1rem;
@@ -127,24 +127,28 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
   .review-buttons button {
     padding: 5px 10px;
     margin-right: 5px;
-    background-color: #E5FC94;
+    background-color: #574C3F;
     cursor: pointer;
     border: none;
     border-radius: 5px;
+    color: white;
   }
   
   .review-buttons button:hover {
-    background-color: #bdd07b;
+    background-color: #ECE4DA;
   }
   
 /* reviewpage header */
 .review-page-header {
     text-align: center;
-    background-color: #50785C; 
-    color: white;
+    background-color:white; 
+    color: #574C3F;
     padding: 20px; /* Space around the header */
-    width: 100%; /* Full width */
-  }
+    width: 100%; 
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
   
   .review-page-title {
     font-size: 2.5rem;
@@ -167,5 +171,11 @@ body, button, input, .review, .review-section, .username-input, .submit-button, 
     color: #fff; 
     margin-top: 5px; /* Space above the timestamp */
 
+  }
+
+  .rate-area{
+    background-color: #ECE4DA;
+    height: 300px;
+    border-radius: 20px;
   }
   

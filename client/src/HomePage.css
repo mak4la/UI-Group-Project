@@ -1,22 +1,25 @@
-body {
-    transition: background-color 1s ease, color 1s ease; 
-}
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 
 .banner{
     display: flex;
     justify-content: center; 
     flex-direction: column;
     align-items: center;
-    background-color: #50785C;
+    background-color: white;
     padding: 65px;
     border-radius: 30px;
-    max-width: 80%;
+    border-style: solid;
+    border-color: #574C3F;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    max-width: 90%;
     margin: 0 auto;
-    height: 300px;
+    height: 400px;
     text-align: center;
     margin-bottom: 30px;
-    margin-top: 25px;
-    color: white;
+    color: #574C3F;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 .banner h1, .banner h2 {
     margin: 0; 
@@ -33,11 +36,11 @@ body {
 }
 .banner button{
     font-size: 25px;
-    background-color: black;
+    background-color:#574C3F;
     color: white;
     border-radius: 60px;
-    width: 150px;
-    height: 40px;
+    width: 120px;
+    height: 35px;
 }
 .top{
     margin-bottom: 30px;
@@ -46,23 +49,60 @@ body {
 }
 .data{
     display: flex;
-    height: 550px;
-    padding-left: 40px;
-    padding-top: 100px;
+    flex-direction: column; 
+    margin-bottom: 100px; 
+    margin-left: 70px;
+}
+.data-text{
+    max-width: 900px;
+    width: 100%; 
+    word-wrap: break-word;
+    text-align: left;
+    color:#36302A;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.data-text1{
+    max-width: 900px;
+    width: 100%; 
+    word-wrap: break-word;
+    text-align: right;
+    color:#36302A;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-right: 100px;
+}
+.data-text-image{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+}
+.image {
+    max-width: 500px;
+    height:500px; 
+    margin-left: 20px;
+    margin-right: 80px;
 }
 .data h1{
     font-size: 35px;
 }
 .data h2{
     font-size: 50px;
+    margin-top: 0;
+    margin-bottom: 80px;
+    max-width: 900px;
 }
 .data button{
-    font-size: 25px;
-    background-color: black;
+    font-size: 20px;
+    background-color: #574C3F;
     color: white;
     border-radius: 60px;
     width: 150px;
     height: 50px;
+    margin-top: -50px;
 }
 .data-image{
     margin-top: -85px;
@@ -71,24 +111,16 @@ body {
     height: 500px;
     float: right;
 }
-.data-small {
-    height: 40px; 
-}
-.data-left .data-image {
-    order: 1; 
-    margin-right: 20px; 
-}
-.data-right .data-image {
-    order: 2; 
-    margin-left: 20px;
-}  
-.text-content {
-    flex: 1; 
-}
 .buttonHome{
     justify-content: center; 
     font-size: 20px;
     color: white;
     text-decoration: none;
+    height: 35px;
+    width: 120px;
 }
   
+.homepage{
+    background-color: #ECE4DA;
+    height: 2200px;
+}

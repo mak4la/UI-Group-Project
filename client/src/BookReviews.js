@@ -78,42 +78,43 @@ const BookReviews = () => {
     <>
       {/* Header Section */}
       <header className="review-page-header">
-        {/* <h1 className="review-page-title">PageNest</h1> */}
-        <p className="review-page-subtitle">
-          Share and read reviews 
-        </p>
-      </header>
-      
-      <div className="review-section">
+          {/* <h1 className="review-page-title">PageNest</h1> */}
+          <h1 className="review-page-subtitle">
+            Share and read reviews 
+          </h1>
+        </header>
+      <div className="review-section">  
         <h2 className="book-title">{bookTitle}</h2>
-        <div className="star-rating">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <span
-              key={star}
-              className={`star ${star <= (hover || rating) ? 'filled' : ''}`}
-              onClick={() => setRating(star)}
-              onMouseEnter={() => setHover(star)}
-              onMouseLeave={() => setHover(rating)}
-            >
-              &#9733;
-            </span>
-          ))}
+        <div className="rate-area">
+          <div className="star-rating">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={`star ${star <= (hover || rating) ? 'filled' : ''}`}
+                onClick={() => setRating(star)}
+                onMouseEnter={() => setHover(star)}
+                onMouseLeave={() => setHover(rating)}
+              >
+                &#9733;
+              </span>
+            ))}
+          </div>
+          <textarea
+            className="review-text"
+            placeholder="Write your review here..."
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+          ></textarea>
+          <input
+            type="text"
+            className="username-input"
+            placeholder="Enter your username..."
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
-        <textarea
-          className="review-text"
-          placeholder="Write your review here..."
-          value={reviewText}
-          onChange={(e) => setReviewText(e.target.value)}
-        ></textarea>
-        <input
-          type="text"
-          className="username-input"
-          placeholder="Enter your username..."
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
         <div className="button-container">
-          <button className="back-button" onClick={handleBackButtonClick}>
+          <button className="submit-button" onClick={handleBackButtonClick}>
             Back to home
           </button>
           <button className="submit-button" onClick={handleRatingSubmit}>

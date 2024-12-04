@@ -1,24 +1,28 @@
-/* .footer{
-    padding: 65px;
-    background-color: #50785C;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.footer h1{
-    margin: 0;
-} */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
 .footer {
     display: flex;
     justify-content: center; 
     align-items: center;
     /* height: 100px; */
-    background-color: #50785C;
-    color: white;
+    background-color: #ECE4DA;
     padding: 65px;
+    height: 45px;
+    flex-direction: column;
+}
+.footer-links{
+    display: flex; 
+    gap: 20px; 
+    margin-top: 10px;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .footer h1 {
     margin: 0;
+}
+.img{
+    width: 110px;
+    height: 80px;
 }

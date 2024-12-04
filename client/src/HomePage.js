@@ -3,6 +3,9 @@ import { data } from './data';
 import React, { useEffect } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Discover from './assets/discover.png';
+import Organize from './assets/organize.png';
+import Rate from './assets/rate_processed.png';
 
 const HomePage = () => {
   useEffect(() => {
@@ -39,45 +42,49 @@ const HomePage = () => {
               </button>
             </div>
           </div>
-          
-          <div> 
-            {data.map((group, i) => (
-              <div
-                key={i}
-                className={`data ${i === 0 ? 'data-small' : ''}`}
-                data-bgcolor={group.theme.backgroundColor}
-                data-txtcolor={group.theme.color}
-                data-button={group.button}
-              >
-              {i % 2 === 0 ? (
-                  <>
-                    {group.image && <img src={group.image} alt={group.title} className='data-image' />}
-                    <div className='text-content'>
-                      {group.title && <h1>{group.title}</h1>}
-                      {group.paragraph && <h2>{group.paragraph}</h2>}
-                      {group.button && <button>{group.button}</button>}
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className='text-content'>
-                      {group.title && <h1>{group.title}</h1>}
-                      {group.paragraph && <h2>{group.paragraph}</h2>}
-                      {group.button && <button>{group.button}</button>}
-                    </div>
-                    {group.image && <img src={group.image} alt={group.title} className='data-image' />}
-                  </>
-                )}
+         
+          <div>
+            <div className='data'>
+              <div className='data-text-image'>
+                <div className = 'data-text'>
+                  <h1>Discover</h1>
+                  <h2>What is your next read going to be?</h2>
+                  <button>
+                    <a href="/register" className='buttonHome'> Start Now </a>
+                  </button>
+                </div>
+                <img src={Discover} alt="Discover Image" className='image' />
               </div>
-            ))}
+            </div>
+            <div className='data'>
+              <div className='data-text-image'>
+              <img src={Organize} alt="Organize Image" className='image' />
+                <div className = 'data-text1'>
+                  <h1>Organize</h1>
+                  <h2>Create collections and keep track of your books</h2>
+                  <button>
+                    <a href="/register" className='buttonHome'> Start Now </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div className='data'>
+              <div className='data-text-image'>
+                <div className = 'data-text'>
+                  <h1>Rate & Review</h1>
+                  <h2>Review and rate your favorite books!</h2>
+                  <button>
+                    <a href="/register" className='buttonHome'> Start Now </a>
+                  </button>
+                </div>
+                <img src={Rate} alt="Rate Image" className='image' />
+              </div>
+            </div>
           </div>
         </div>
-      {/* <Footer /> */}
     </>
   );
 }
 
 
 export default HomePage;
-
-

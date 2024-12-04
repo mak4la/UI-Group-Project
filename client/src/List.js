@@ -12,7 +12,7 @@ export default function List({id, name}){
                 <a href="/lists/1" className="temp-hyperlink">{name}</a>
             </h1>
             <p>Number of Books: </p>
-            <button onClick={handleDelete}>DELETE</button>
+            <button className='deleteList' onClick={handleDelete}>DELETE</button>
         </div>
     )
 }

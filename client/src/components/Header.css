@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 .header{
     padding: 25px;
-    background-color: #50785C;
+    background-color: #ECE4DA;
     color: white;
     display: flex;
     align-items: center;
@@ -26,7 +27,13 @@
 }
 .navLinks a {
     text-decoration: none; /* Remove underline */
-    color: white; 
+    color: #574C3F; 
     font-size: 20px;
-    font-weight: bold;
+    font-family: "Merriweather", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+.img{
+    width: 110px;
+    height: 70px;
 }

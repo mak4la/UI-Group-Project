@@ -12,7 +12,7 @@
     list-style-type: none;
     padding: 20px;
     margin: 80px;
-    background: silver;
+    background: #ECE4DA;
     margin-left: calc(calc(100% - 1000px)/2);
     text-align: center;
 }
@@ -25,6 +25,7 @@
     display: flex; 
     flex-direction: row;
     justify-content: center;
+    
 }
 
 .book-header, .book-footer{
@@ -34,4 +35,14 @@
     text-align: center;
     align-content: center;
     flex:1
+}
+
+.book-button{
+    font-size: 15px;
+    background-color:#574C3F;
+    color: white;
+    border-radius: 60px;
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
 }

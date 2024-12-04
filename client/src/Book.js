@@ -24,9 +24,9 @@ const Book = () => {
                 </p>
                 <div className="button-group"> 
                     Work in Progress: 
-                    <button> Add to List </button>     
-                    <button> See Reviews </button>
-                    <button> Notes </button>
+                    <button className="book-button"> Add to List </button>     
+                    <button className="book-button"> See Reviews </button>
+                    <button className="book-button"> Notes </button>
                 </div>
 
             </div>
