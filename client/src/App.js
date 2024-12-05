@@ -1,12 +1,13 @@
 import React from 'react';
-import HomePage from './HomePage';
 import Register from './Register';
 import Login from './Login';
 
 function App() {
   return (
     <div className="App">
-      <HomePage /> 
+      {/* Uncomment one of these to display it */}
+      {/* <Register /> */}
+      <Login />
     </div>
   );
 }
