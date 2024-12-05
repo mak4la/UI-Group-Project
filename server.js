@@ -24,6 +24,7 @@ app.get('/', (req, res) => {
   res.send('Backend is running on Node.js with dotenv!');
 });
 
+// - Get user's lists
 app.get('/back/lists/:userId', async (req, res) => {
   try {
     const result = await getUserLists(req.params.userId)
@@ -33,6 +34,7 @@ app.get('/back/lists/:userId', async (req, res) => {
   }
 })
 
+// - Create List in Database
 app.post('/back/lists/add', async (req, res) => {
   try {
     console.log(req.body)

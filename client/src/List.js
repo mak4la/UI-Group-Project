@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Lists.css';
 
 export default function List({id, name}){
@@ -6,10 +7,11 @@ export default function List({id, name}){
         console.log("hit delete button")
     }
 
+
     return(
         <div> 
             <h1>
-                <a href="/lists/1" className="temp-hyperlink">{name}</a>
+              <Link to="/lists/1" className='list-link'>{name}</Link>
             </h1>
             <p>Number of Books: </p>
             <button className='deleteList' onClick={handleDelete}>DELETE</button>

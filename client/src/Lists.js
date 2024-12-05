@@ -6,6 +6,7 @@ const Lists = () =>{
   const [text, setText] = useState("")
   const [lists, setLists] = useState([{}]);
 
+  //loads user's lists when page is loaded
   useEffect(() => {
     fetch("/back/lists/1").then(
       response => response.json()
@@ -20,6 +21,7 @@ const Lists = () =>{
       setLists([...lists, {id: lists.length, name: listName} ])
     }
 
+    //Submission for add button
     const handleSubmit = (event) =>{
         event.preventDefault()
   
