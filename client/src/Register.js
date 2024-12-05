@@ -20,18 +20,55 @@ function Register() {
       [name]: value,
     });
 
+    // Check if passwords match
     if (name === 'confirmPassword' || name === 'password') {
       setPasswordMatch(
-        formData.password === value && formData.password !== '' ? true : false
+        name === 'confirmPassword'
+          ? formData.password === value
+          : value === formData.confirmPassword
       );
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (passwordMatch) {
-      console.log('Form data (frontend only):', formData);
-      alert('Form submitted! (frontend only)');
+      try {
+        const response = await fetch('http://localhost:5001/back/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: formData.username,
+            password: formData.password,
+            email: formData.email,
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+          }),
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to register');
+                }
+
+        const data = await response.json();
+        console.log('User registered successfully:', data);
+        alert('Registration successful!');
+
+        // Clear the form after successful registration
+        setFormData({
+          firstName: '',
+          lastName: '',
+          username: '',
+          email: '',
+          password: '',
+          confirmPassword: '',
+        });
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to register user. Please try again.');
+      }
     } else {
       alert('Passwords do not match');
     }
@@ -39,13 +76,15 @@ function Register() {
 
   return (
     <div className="register-page">
-      {/* Close button */}
       <button className="close-button">×</button>
 
       <header className="register-header">
         <h2 className="register-title">Create Your Account</h2>
-        <p className="register-subtitle">Join PageNest and start your reading journey today!</p>
+        <p className="register-subtitle">
+          Join PageNest and start your reading journey today!
+        </p>
       </header>
+
       <form className="register-form" onSubmit={handleSubmit}>
         <div className="name-fields">
           <div className="form-group">
@@ -69,6 +108,7 @@ function Register() {
             />
           </div>
         </div>
+
         <div className="form-group">
           <label>Username</label>
           <input
@@ -79,6 +119,7 @@ function Register() {
             required
           />
         </div>
+
         <div className="form-group">
           <label>Email</label>
           <input
@@ -89,6 +130,7 @@ function Register() {
             required
           />
         </div>
+
         <div className="form-group">
           <label>Password</label>
           <input
@@ -99,6 +141,7 @@ function Register() {
             required
           />
         </div>
+
         <div className="form-group">
           <label>Confirm Password</label>
           <input
@@ -115,10 +158,15 @@ function Register() {
             <p className="success-text">Passwords match</p>
           )}
         </div>
-        <button type="submit" className="register-button">Register</button>
+
+        <button type="submit" className="register-button">
+          Register
+        </button>
       </form>
+
       <p className="login-link">
-        Already have an account? <span style={{ color: '#574C3F', cursor: 'pointer' }}>Log in</span>
+        Already have an account?{' '}
+        <span style={{ color: '#574C3F', cursor: 'pointer' }}>Log in</span>
       </p>
     </div>
   );
