@@ -22,20 +22,23 @@ const Lists = () =>{
     }
 
     //Submission for add button
-    const handleSubmit = (event) =>{
-        event.preventDefault()
-  
-        fetch("/back/lists/add", {
-          method:'post',
-          headers:{
-            "Content-Type":"application/json"
-          },
-          body:JSON.stringify({data : [text, 1]})
-        }).then(
-          response => response.json())
-        addList(text)
-        setText("") /*reset the input box*/
-      }
+    const handleSubmit = () =>{
+        if(text.trim() !== ''){
+
+          fetch("/back/lists/add", {
+            method:'post',
+            headers:{
+              "Content-Type":"application/json"
+            },
+            body:JSON.stringify({data : [text, 1]})
+          }).then(
+            response => response.json())
+          addList(text)
+          setText("") /*reset the input box*/
+        }else{
+          alert("Please enter a name for the list.")
+        }
+    }
     
     const handleDelete = (id) =>{
       console.log("hit delete button")

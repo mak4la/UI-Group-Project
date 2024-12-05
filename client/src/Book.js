@@ -10,8 +10,12 @@ const Book = () => {
     }
 
     const handleNoteSubmit = (event) =>{
-        event.preventDefault()
-        addNote(noteText)
+        if(noteText.trim() !== ''){
+            addNote(noteText)
+        }else{
+            alert("Note must have text to add.")
+        }
+        
     }
 
     return(
