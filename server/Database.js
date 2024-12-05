@@ -44,7 +44,7 @@ export async function createReview(google_book_id, user_id, rating, review_text)
 
 export async function getUserLists(user_id) {
   const [rows] = await pool.query(
-    'SELECT * FROM lists WHERE user_id = ?',
+    'SELECT list_id as id, list_name as name FROM lists WHERE user_id = ?',
     [user_id]
   )
   return rows

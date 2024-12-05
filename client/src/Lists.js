@@ -4,31 +4,36 @@ import List from './List';
 
 const Lists = () =>{
   const [text, setText] = useState("")
-  const [lists, setLists] = useState([
-    {
-      id: 1,
-      name: "Reading"
-    },
-    {
-      id:2,
-      name:"Already Read"
-    },
-    {
-      id:3,
-      name:"Wishlist"
-    }
-  ]);
+  const [lists, setLists] = useState([{}]);
+
+  useEffect(() => {
+    fetch("/back/lists/1").then(
+      response => response.json()
+    ).then(
+      data => {
+        setLists(data)
+      }
+    )
+    }, [])
 
     const addList = (listName) =>{
       setLists([...lists, {id: lists.length, name: listName} ])
     }
 
-    const handleSubmit = (event) =>
-    {
-      event.preventDefault()
-      addList(text)
-      setText("") /*reset the input box*/
-    }
+    const handleSubmit = (event) =>{
+        event.preventDefault()
+  
+        fetch("/back/lists/add", {
+          method:'post',
+          headers:{
+            "Content-Type":"application/json"
+          },
+          body:JSON.stringify({data : [text, 1]})
+        }).then(
+          response => response.json())
+        addList(text)
+        setText("") /*reset the input box*/
+      }
     return(
       <div className='lists-page'>
     
