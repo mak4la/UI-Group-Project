@@ -6,16 +6,18 @@
 }
 
 .book {
-    height: 600px;
+    height: 800px;
     width: 1000px;
     border-radius: 20px;
     list-style-type: none;
     padding: 20px;
     margin: 80px;
-    background: #ECE4DA;
+    margin-bottom: 40px;
     margin-left: calc(calc(100% - 1000px)/2);
+    background: #ECE4DA;
     text-align: center;
 }
+
 
 .book p{
     margin: 20px
@@ -45,4 +47,28 @@
     width: 150px;
     height: 40px;
     margin-left: 10px;
+}
+
+.note {
+    height: 100px;
+    width: 800px;
+    border-radius: 20px;
+    list-style-type: none;
+    padding: 20px;
+    margin: 20px;
+    background: #ECE4DA;
+    margin-left: calc(calc(100% - 800px)/2);
+    text-align: center;
+}
+
+.note-text{
+    width: 900px;
+    height: 100px;
+    padding: 10px;
+    margin: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    resize: vertical;
 }

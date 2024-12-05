@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import './Book.css';
 
 const Book = () => {
+    const [noteText, setNoteText] = useState("")
+    const [notes, setNotes] = useState([{id: 1, note: "Testing note"}])
+
+    const addNote = (text) =>{
+        setNotes([...notes, {id: notes.length, note: text}])
+    }
+
+    const handleNoteSubmit = (event) =>{
+        event.preventDefault()
+        addNote(noteText)
+    }
+
     return(
         <div className='book-page'>
             {/*<header className="book-header">
@@ -23,15 +35,23 @@ const Book = () => {
                     This is a sample description. 
                 </p>
                 <div className="button-group"> 
-                    Work in Progress: 
                     <button className="book-button"> Add to List </button>     
                     <button className="book-button"> See Reviews </button>
-                    <button className="book-button"> Notes </button>
                 </div>
-
+                <textarea
+                    className="note-text"
+                    placeholder="Write your note here..."
+                    value={noteText}
+                    onChange={(e) => setNoteText(e.target.value)}
+                ></textarea>
+                <button className="book-button" onClick={handleNoteSubmit}> Add Note </button>
             </div>
             
-            
+            {notes.map( note => (
+                <div className='note'>
+                    <text key={note.id}>{note.note}</text>
+                </div>
+            ))}
 
             {/*<footer className="book-footer">
             </footer> */} 

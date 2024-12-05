@@ -3,18 +3,13 @@ import './Lists.css';
 
 export default function List({id, name}){
 
-    const handleDelete = () =>{
-        console.log("hit delete button")
-    }
-
-
     return(
         <div> 
             <h1>
               <Link to="/lists/1" className='list-link'>{name}</Link>
             </h1>
             <p>Number of Books: </p>
-            <button className='deleteList' onClick={handleDelete}>DELETE</button>
+            {/*<button className='deleteList' onClick={handleDelete}>DELETE</button>*/}
         </div>
     )
 }

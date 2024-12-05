@@ -36,6 +36,11 @@ const Lists = () =>{
         addList(text)
         setText("") /*reset the input box*/
       }
+    
+    const handleDelete = (id) =>{
+      console.log("hit delete button")
+      setLists(lists.filter(list => list.id !== id))
+    }
     return(
       <div className='lists-page'>
     
@@ -49,6 +54,7 @@ const Lists = () =>{
         {lists.map( list => (
           <div className='list-box'>
             <List key={list.id} id={list.id} name={list.name}/> 
+            <button className='deleteList' onClick={() => handleDelete(list.id)}>DELETE</button>
           </div>
         ))}
       </div>
