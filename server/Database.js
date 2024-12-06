@@ -58,6 +58,22 @@ export async function createList(user_id, list_name) {
   return result
 }
 
+export const deleteList = async (listId) => {
+  try {
+      
+      await pool.query('DELETE FROM books_in_lists WHERE list_id = ?', [listId]);
+      
+      
+      await pool.query('DELETE FROM lists WHERE list_id = ?', [listId]);
+      
+      console.log('List deleted:', listId);
+      return true;
+  } catch (error) {
+      console.error('Database error deleting list:', error);
+      throw error;
+  }
+};
+
 export async function getListBooks(list_id) {
   const [rows] = await pool.query(
     'SELECT * FROM books_in_lists WHERE list_id = ?',
