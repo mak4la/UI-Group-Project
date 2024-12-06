@@ -7,7 +7,7 @@
     "@testing-library/user-event": "^13.5.0",
     "client": "file:",
     "lucide-react": "^0.465.0",
-    "mysql": "^2.18.1",
+    "mysql2": "^3.11.5",
     "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"

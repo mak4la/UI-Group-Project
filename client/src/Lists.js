@@ -4,9 +4,10 @@ import List from './List';
 
 const Lists = () =>{
   const [text, setText] = useState("")
-  const [lists, setLists] = useState([{}]);
+  const [lists, setLists] = useState([{id: 1, name: "placeholder"}]);
 
   //loads user's lists when page is loaded
+
   useEffect(() => {
     fetch("/back/lists/1").then(
       response => response.json()
