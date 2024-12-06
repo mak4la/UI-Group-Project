@@ -1,68 +1,139 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Lists.css';
-import List from './List';
 
-const Lists = () =>{
-  const [text, setText] = useState("")
-  const [lists, setLists] = useState([{id: 1, name: "placeholder"}]);
+const Lists = () => {
+   const [lists, setLists] = useState([]);
+   const [newListName, setNewListName] = useState('');
+   
+   useEffect(() => {
+       fetchLists();
+   }, []);
 
-  //loads user's lists when page is loaded
+   const fetchLists = async () => {
+       try {
+           const userId = 1;
+           const response = await fetch(`http://localhost:5050/back/lists/${userId}`);
+           const data = await response.json();
+           setLists(data);
+           
+           for (const list of data) {
+               await fetchListBooks(list.id);
+           }
+       } catch (error) {
+           console.error('Error fetching lists:', error);
+       }
+   };
 
-  useEffect(() => {
-    fetch("/back/lists/1").then(
-      response => response.json()
-    ).then(
-      data => {
-        setLists(data)
-      }
-    )
-    }, [])
+   const fetchListBooks = async (listId) => {
+       try {
+           const response = await fetch(`http://localhost:5050/api/books/list/${listId}`);
+           const data = await response.json();
+           setLists(prevLists => prevLists.map(list => 
+               list.id === listId ? { ...list, books: data } : list
+           ));
+       } catch (error) {
+           console.error('Error fetching list books:', error);
+       }
+   };
 
-    const addList = (listName) =>{
-      setLists([...lists, {id: lists.length, name: listName} ])
-    }
+   const handleCreateList = async () => {
+       if (!newListName.trim()) {
+           alert('Please enter a list name');
+           return;
+       }
 
-    //Submission for add button
-    const handleSubmit = () =>{
-        if(text.trim() !== ''){
+       try {
+           const response = await fetch('http://localhost:5050/back/lists/add', {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'application/json',
+               },
+               body: JSON.stringify({
+                   data: [newListName, 1]
+               })
+           });
 
-          fetch("/back/lists/add", {
-            method:'post',
-            headers:{
-              "Content-Type":"application/json"
-            },
-            body:JSON.stringify({data : [text, 1]})
-          }).then(
-            response => response.json())
-          addList(text)
-          setText("") /*reset the input box*/
-        }else{
-          alert("Please enter a name for the list.")
-        }
-    }
-    
-    const handleDelete = (id) =>{
-      console.log("hit delete button")
-      setLists(lists.filter(list => list.id !== id))
-    }
-    return(
-      <div className='lists-page'>
-    
-        <h1>Your Lists</h1>
+           if (response.ok) {
+               setNewListName('');
+               fetchLists();
+           }
+       } catch (error) {
+           console.error('Error creating list:', error);
+       }
+   };
 
-        <form onSubmit={handleSubmit}>
-          <input type='text' placeholder="Enter a list name" value={text} onChange={e => setText(e.target.value)}></input>
-          <button className = 'addList' type='submit'>Add List</button>
-        </form>
+   const handleDeleteList = async (listId) => {
+       if (!window.confirm('Are you sure you want to delete this list?')) {
+           return;
+       }
 
-        {lists.map( list => (
-          <div className='list-box'>
-            <List key={list.id} id={list.id} name={list.name}/> 
-            <button className='deleteList' onClick={() => handleDelete(list.id)}>DELETE</button>
-          </div>
-        ))}
-      </div>
-  );
-}
+       try {
+           const response = await fetch(`http://localhost:5050/back/lists/${listId}`, {
+               method: 'DELETE'
+           });
 
-export default Lists
+           if (response.ok) {
+               fetchLists();
+           }
+       } catch (error) {
+           console.error('Error deleting list:', error);
+       }
+   };
+
+   return (
+       <div className="lists-page">
+           <Link to="/" className="back-link">← Back to Home</Link>
+           
+           <h1>My Collections</h1>
+           
+           <div className="create-list-section">
+               <input
+                   type="text"
+                   value={newListName}
+                   onChange={(e) => setNewListName(e.target.value)}
+                   placeholder="New collection name..."
+                   className="collection-input"
+                   onKeyPress={(e) => e.key === 'Enter' && handleCreateList()}
+               />
+               <button 
+                   onClick={handleCreateList}
+                   className="create-collection-btn"
+               >
+                   Create Collection
+               </button>
+           </div>
+
+           <div className="lists-grid">
+               {lists.map((list) => (
+                   <div key={list.id} className="list-card">
+                       <div className="list-header">
+                           <h2>{list.name}</h2>
+                           <p>{list.books?.length || 0} Books</p>
+                           <button 
+                               onClick={() => handleDeleteList(list.id)}
+                               className="delete-btn"
+                           >
+                               Delete List
+                           </button>
+                       </div>
+                       <div className="books-preview">
+                            {list.books?.map(book => (
+                                <div key={book.google_book_id} className="book-item">
+                                    <img 
+                                        src={book.thumbnail || '/placeholder-book.png'} 
+                                        alt={book.title}
+                                        className="book-cover"
+                                    />
+                                    <h3 className="book-title">{book.title}</h3>
+                                </div>
+                            ))}
+                        </div>
+                   </div>
+               ))}
+           </div>
+       </div>
+   );
+};
+
+export default Lists;

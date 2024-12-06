@@ -65,7 +65,7 @@ const HomePage = () => {
                   <h1>Organize</h1>
                   <h2>Create collections and keep track of your books</h2>
                   <button>
-                    <a href="/register" className='buttonHome'> Start Now </a>
+                  <Link to="/lists" className='buttonHome'> Start Now </Link>
                   </button>
                 </div>
               </div>

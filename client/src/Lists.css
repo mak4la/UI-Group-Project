@@ -1,81 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
-
 .lists-page {
-    min-height: 100vh;   
-    display: flex;
-    flex-direction: column;
-    text-align: center;   
-    align-items: center;
-}
-
-.lists-page h1{
-    text-align: center;
-    color: #574C3F;
-    padding: 20px;
-    width: auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ECE4DA 0%, #f5f0eb 100%);
+    min-height: 100vh;
     font-family: "Merriweather", serif;
-    font-weight: 600;
-    font-style: normal;
-    margin-top: -15px;
 }
 
-.list-box{
-    height: 150px;
-    width: 40%;
-    margin: 20px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: #ECE4DA;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.back-link {
     color: #574C3F;
-    
-}
-
-.lists-header, .lists-footer{
-    height: 10px;
-    width: 100%;
-    background-color: #50785C;
-    text-align: center;
-    align-content: center;
-    flex:1
-}
-
-.temp-hyperlink {
-    color: #574C3F; 
     text-decoration: none;
     font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
+    display: inline-block;
+    margin-bottom: 2rem;
 }
 
-.temp-hyperlink:hover {
-    color: #03111f; 
+.lists-page h1 {
+    color: #574C3F;
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1.5rem 0;
 }
 
-.addList {
-    padding: 5px 10px;
-    margin-left: 5px;
+/* Create List Section */
+.create-list-section {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.collection-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: 2px solid #574C3F;
+    border-radius: 30px;
+    font-size: 16px;
+    font-family: "Merriweather", serif;
+    outline: none;
+}
+
+.create-collection-btn {
     background-color: #574C3F;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
     color: white;
-    height: 25px;
-
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: "Merriweather", serif;
+    font-size: 16px;
+    white-space: nowrap;
 }
 
-.deleteList {
-    padding: 5px 10px;
-    margin-left: 5px;
-    background-color: #574C3F
-    ;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    height: 25px;
+/* Lists Grid */
+.lists-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
 }
 
-.list-link {
-    color: black;
+.list-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 1px solid #574C3F;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.list-header h2 {
+    color: #574C3F;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.list-header p {
+    color: #574C3F;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.delete-btn {
+    background-color: #574C3F;
+    color: white;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "Merriweather", serif;
+    font-size: 0.9rem;
+}
+
+/* Books Grid */
+.books-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.book-cover {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.book-title {
+    font-size: 0.9rem;
+    color: #574C3F;
+    text-align: center;
+    margin: 0;
+    max-width: 150px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+
+.create-collection-btn:hover,
+.delete-btn:hover {
+    background-color: #36302A;
+}
+
+.collection-input:focus {
+    border-color: #36302A;
+    box-shadow: 0 0 0 2px rgba(87, 76, 63, 0.1);
+}
+
+
+@media (max-width: 768px) {
+    .create-list-section {
+        flex-direction: column;
+    }
+
+    .create-collection-btn {
+        width: 100%;
+    }
+
+    .list-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .books-preview {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .book-cover {
+        width: 100px;
+        height: 150px;
+    }
 }

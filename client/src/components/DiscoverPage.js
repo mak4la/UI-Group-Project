@@ -14,7 +14,7 @@ const DiscoverPage = () => {
     }, []);
 
     const fetchBestsellers = async () => {
-        console.log('Attempting to fetch bestsellers...'); // Debug log
+        console.log('Attempting to fetch bestsellers...'); 
         try {
             const response = await fetch('http://localhost:5050/api/books/bestsellers');
             if (!response.ok) {
@@ -22,7 +22,7 @@ const DiscoverPage = () => {
                 return;
             }
             const data = await response.json();
-            console.log('Bestsellers data received:', data); // Debug log
+            console.log('Bestsellers data received:', data);
             setBestsellers(data);
         } catch (error) {
             console.error('Error fetching bestsellers:', error);
@@ -33,7 +33,7 @@ const DiscoverPage = () => {
         if (!query.trim()) return;
 
         setIsLoading(true);
-        console.log('Attempting search with query:', query); // Debug log
+        console.log('Attempting search with query:', query); 
         try {
             const response = await fetch(`http://localhost:5050/api/books/search?q=${encodeURIComponent(query)}`);
             if (!response.ok) {
@@ -41,7 +41,7 @@ const DiscoverPage = () => {
                 return;
             }
             const data = await response.json();
-            console.log('Search results received:', data); // Debug log
+            console.log('Search results received:', data); 
             setBooks(data);
         } catch (error) {
             console.error('Search failed:', error);
@@ -52,33 +52,7 @@ const DiscoverPage = () => {
 
     const BookCard = ({ book, isSearchResult }) => {
         const [showModal, setShowModal] = useState(false);
-
-        const handleAddToList = async (book, listId) => {
-            console.log('Attempting to add book to list:', { book, listId }); // Debug log
-            try {
-                const response = await fetch('http://localhost:5050/api/books/list/add', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        listId,
-                        googleBookId: book.google_book_id
-                    })
-                });
-                
-                if (!response.ok) {
-                    console.error('Add to list response not OK:', await response.text());
-                    return;
-                }
-
-                console.log('Book successfully added to list'); // Debug log
-                setShowModal(false);
-            } catch (error) {
-                console.error('Error adding book to list:', error);
-            }
-        };
-
+    
         return (
             <>
                 <div className="book-card">
@@ -100,12 +74,11 @@ const DiscoverPage = () => {
                         </button>
                     </div>
                 </div>
-
+    
                 <AddToListModal 
                     book={book}
                     isOpen={showModal}
                     onClose={() => setShowModal(false)}
-                    onAddToList={handleAddToList}
                 />
             </>
         );
