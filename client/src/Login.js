@@ -22,7 +22,7 @@ function Login() {
 
   return (
     <div className="login-register-page">
-      <button className="close-button">×</button>
+      <button className="close-buttons">×</button>
       <header className="login-register-header">
         <h2 className="login-register-title">Welcome back!</h2>
         <p className="login-register-subtitle">Login to your account.</p>

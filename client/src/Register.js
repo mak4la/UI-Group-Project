@@ -76,7 +76,7 @@ function Register() {
 
   return (
     <div className="register-page">
-      <button className="close-button">×</button>
+      <button className="close-buttons">×</button>
 
       <header className="register-header">
         <h2 className="register-title">Create Your Account</h2>
