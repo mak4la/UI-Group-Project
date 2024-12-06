@@ -50,6 +50,9 @@
 }
 
 .note {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
     height: 100px;
     width: 800px;
     border-radius: 20px;
@@ -59,6 +62,7 @@
     background: #ECE4DA;
     margin-left: calc(calc(100% - 800px)/2);
     text-align: center;
+    align-items: center;
 }
 
 .note-text{
@@ -71,4 +75,16 @@
     border: 1px solid #ccc;
     margin-bottom: 20px;
     resize: vertical;
+}
+
+.delete-note {
+    padding: 5px 10px;
+    margin-left: 5px;
+    background-color: #574C3F;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    height: 25px;
+    width: 100px;
 }

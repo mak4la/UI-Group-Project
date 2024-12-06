@@ -3,7 +3,7 @@ import './Book.css';
 
 const Book = () => {
     const [noteText, setNoteText] = useState("")
-    const [notes, setNotes] = useState([{id: 1, note: "Testing note"}])
+    const [notes, setNotes] = useState([{id: 0, note: "Testing note"}])
 
     const addNote = (text) =>{
         setNotes([...notes, {id: notes.length, note: text}])
@@ -12,11 +12,17 @@ const Book = () => {
     const handleNoteSubmit = (event) =>{
         if(noteText.trim() !== ''){
             addNote(noteText)
+            setNoteText("")
         }else{
             alert("Note must have text to add.")
         }
         
     }
+
+    const handleDelete = (id) =>{
+        console.log("hit delete button")
+        setNotes(notes.filter(note => note.id !== id))
+      }
 
     return(
         <div className='book-page'>
@@ -54,6 +60,7 @@ const Book = () => {
             {notes.map( note => (
                 <div className='note'>
                     <text key={note.id}>{note.note}</text>
+                    <button className='delete-note' onClick={() => handleDelete(note.id)}>DELETE</button>
                 </div>
             ))}
 

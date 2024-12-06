@@ -30,13 +30,13 @@ router.get('/list/:listId', async (req, res) => {
 router.post('/list/add', async (req, res) => {
     try {
         console.log('Received request body:', req.body);
-        const { list_id, google_book_id } = req.body;
+        const { list_id, google_book_id, bookDetails } = req.body;
         
         if (!list_id || !google_book_id) {
             throw new Error('Missing required fields: list_id or google_book_id');
         }
 
-        const result = await addBookToList(list_id, google_book_id);
+        const result = await addBookToList(list_id, google_book_id, bookDetails);
         res.json({ message: 'Book added to list successfully', result });
     } catch (error) {
         console.error('Add to list error:', error);

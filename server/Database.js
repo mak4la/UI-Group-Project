@@ -83,11 +83,15 @@ export const deleteList = async (listId) => {
     }
 };
 
+
+/*'SELECT * FROM books_in_lists WHERE list_id = ?',
+            [list_id] */
+
 export async function getListBooks(list_id) {
     try {
         console.log('Fetching books for list:', list_id);
         const [rows] = await pool.query(
-            'SELECT * FROM books_in_lists WHERE list_id = ?',
+            'SELECT list_id, l.google_book_id, title, author, description, thumbnail FROM books_in_lists l LEFT JOIN books b ON l.google_book_id = b.google_book_id WHERE list_id = ?',
             [list_id]
         );
         console.log('Found books:', rows);
@@ -98,9 +102,9 @@ export async function getListBooks(list_id) {
     }
 }
 
-export async function addBookToList(list_id, google_book_id) {
+export async function addBookToList(list_id, google_book_id, bookDetails) {
     try {
-        console.log('Attempting to add book to list:', { list_id, google_book_id });
+        console.log('Attempting to add book to list:', { list_id, google_book_id}, bookDetails.title);
         
         const [existing] = await pool.query(
             'SELECT * FROM books_in_lists WHERE list_id = ? AND google_book_id = ?',
@@ -117,7 +121,24 @@ export async function addBookToList(list_id, google_book_id) {
             [list_id, google_book_id]
         );
         
-        console.log('Book added successfully:', result);
+        console.log('Book added successfully to list:', result);
+
+        const [dataExisting] = await pool.query(
+            'SELECT * FROM books WHERE google_book_id = ?',
+            [google_book_id]
+        );
+
+        if (dataExisting.length > 0) {
+            console.log('Book data already in Database');
+            return { message: 'Book data already in Database' };
+        }
+
+        const [result2] = await pool.query(
+            'INSERT INTO books (google_book_id, title, author, description, thumbnail) VALUES (?, ?, ?, ?, ?)',
+            [google_book_id, bookDetails.title, bookDetails.author, bookDetails.description, bookDetails.thumbnail])
+        
+        console.log('Book details successfully added:', result2);    
+        
         return result;
     } catch (error) {
         console.error('Database error adding book to list:', error);
