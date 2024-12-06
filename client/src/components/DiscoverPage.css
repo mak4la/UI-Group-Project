@@ -1,0 +1,214 @@
+.discover-page {
+    padding: 2rem;
+    background: linear-gradient(135deg, #ECE4DA 0%, #f5f0eb 100%);
+    min-height: 100vh;
+    font-family: "Merriweather", serif;
+}
+
+.discover-nav {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    color: #574C3F;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    font-family: "Merriweather", serif;
+}
+
+.back-link:hover {
+    color: #36302A;
+}
+
+.discover-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.discover-header h1 {
+    font-size: 3rem;
+    color: #574C3F;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: "Merriweather", serif;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.search-input {
+    flex: 1;
+    padding: 14px 24px;
+    border: 2px solid #574C3F;
+    border-radius: 30px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-family: "Merriweather", serif;
+}
+
+.search-input:focus {
+    border-color: #36302A;
+    box-shadow: 0 0 0 3px rgba(87, 76, 63, 0.15);
+}
+
+.search-button {
+    background-color: #574C3F;
+    color: white;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(87, 76, 63, 0.2);
+    font-family: "Merriweather", serif;
+}
+
+.search-button:hover {
+    background-color: #36302A;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(87, 76, 63, 0.3);
+}
+
+.search-button:disabled {
+    background-color: #ECE4DA;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.book-section {
+    margin: 3rem auto;
+    max-width: 1400px;
+    padding: 0 1rem;
+}
+
+.book-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #574C3F;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid #574C3F;
+    display: inline-block;
+    font-family: "Merriweather", serif;
+}
+
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.book-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #574C3F;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(87, 76, 63, 0.2);
+}
+
+.book-cover {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 1px solid #ECE4DA;
+}
+
+.book-info {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-info h3 {
+    font-size: 1.1rem;
+    color: #574C3F;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: "Merriweather", serif;
+}
+
+.author {
+    font-size: 0.95rem;
+    color: #36302A;
+    margin-bottom: 1rem;
+    flex: 1;
+    font-family: "Merriweather", serif;
+}
+
+.add-to-list {
+    background-color: #574C3F;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    font-family: "Merriweather", serif;
+}
+
+.add-to-list:hover {
+    background-color: #36302A;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 1200px) {
+    .books-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .books-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .discover-header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .discover-header h1 {
+        font-size: 2rem;
+    }
+    .search-container {
+        flex-direction: column;
+    }
+    .search-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+}

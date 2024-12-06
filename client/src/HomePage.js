@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Discover from './assets/discover.png';
 import Organize from './assets/organize.png';
 import Rate from './assets/rate_processed.png';
+import BookSearch from './components/BookSearch';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   useEffect(() => {
@@ -21,7 +23,7 @@ const HomePage = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial call to set the background color based on the initial position
+    handleScroll(); 
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -50,7 +52,7 @@ const HomePage = () => {
                   <h1>Discover</h1>
                   <h2>What is your next read going to be?</h2>
                   <button>
-                    <a href="/register" className='buttonHome'> Start Now </a>
+                    <Link to="/discover" className='buttonHome'> Start Now </Link>
                   </button>
                 </div>
                 <img src={Discover} alt="Discover Image" className='image' />

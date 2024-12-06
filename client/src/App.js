@@ -9,6 +9,7 @@ import Register from './Register';
 import Login from './Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import DiscoverPage from './components/DiscoverPage';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/discover" element={<DiscoverPage />} /> {/*ROute for Disocer page*/}
           <Route path="/books/:bookId/reviews" element={<BookReviews />} /> {/* Route for Book Reviews with dynamic bookId */}
           <Route path="/lists" element={<Lists />} /> {/* Route for User's Lists*/}
           <Route path="/lists/:listId" element={<ListedBooks />} /> {/* Route for one of a User's Lists*/}
