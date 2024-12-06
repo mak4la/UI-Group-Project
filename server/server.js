@@ -19,15 +19,12 @@ app.use(cors({
 
 app.use(express.json());
 
-// Book Routes
 app.use('/api/books', bookRoutes);
 
-// Basic Route 
 app.get('/', (req, res) => {
   res.send('Backend is running on Node.js with dotenv!');
 });
 
-// Auth Routes
 app.post('/back/register', async (req, res) => {
   try {
     const { username, password, email, firstName, lastName } = req.body;
@@ -76,6 +73,23 @@ app.delete('/back/lists/:listId', async (req, res) => {
       res.json({ message: 'List deleted successfully' });
   } catch (error) {
       console.error('Server error deleting list:', error);
+      res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/books/list/add', async (req, res) => {
+  try {
+      console.log('Received request to add book:', req.body);
+      const { list_id, google_book_id } = req.body;
+      
+      if (!list_id || !google_book_id) {
+          throw new Error('Missing list_id or google_book_id');
+      }
+      
+      const result = await addBookToList(list_id, google_book_id);
+      res.json({ message: 'Book added successfully', result });
+  } catch (error) {
+      console.error('Error adding book to list:', error);
       res.status(500).json({ error: error.message });
   }
 });
